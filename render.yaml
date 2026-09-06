@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: mightpulse-discord-bot
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+
+      - key: MIGHTPULSE_API_KEY
+        sync: false
+
+      - key: DISCORD_GUILD_ID
+        sync: false
